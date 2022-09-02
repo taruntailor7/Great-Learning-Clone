@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+}
+#navbar{
+    width: 100%;
+    /* border: 1px solid black; */
+    display:flex;
+    /* padding:10px 0px 10px 0px; */
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+#navbar>div:first-child{
+    width: 8%;
+    padding:15px 0px 10px 15px;
+    /* border: 1px solid red; */
+}
+#navbar>div:first-child>a>img{
+    width: 100%;
+}
+#navbar>div:nth-child(2){
+    display:flex;
+    width: 70%;
+    padding: 15px;
+    font-size: 23px;
+    justify-content:space-evenly;
+    /* border: 1px solid blue; */
+}
+#navbar>div>a{
+    text-decoration: none;
+    color: black;
+}
+#navbar>div:last-child{
+    display:flex;
+    width: 22%;
+    padding: 15px;
+    font-size: 23px;
+    justify-content:space-evenly;
+    /* border: 1px solid green; */
+}
+
+/* Create Lectuer Section  */
+
+#createLecture{
+    width: 83%;
+    margin: auto;
+    margin-top:20px;
+    background-color: #f8f8f8;
+    padding:20px;
+    border-radius:8px;
+}
+#createLecture>input,#createLectureBtn{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+#createLectureBtn{
+    background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    color: #fff;
+}
+#crtLec,#allLec,#courDes{
+    width:83%;
+    margin: auto;
+    margin-top: 20px;
+}
+/* Couse description section */
+#courseDescription{
+    width:83%;
+    margin: auto;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    padding:20px;
+    border-radius:8px;
+    
+}
+#courseDescription>div{
+    width:25%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius:5px;
+    padding-bottom: 10px;
+    background:white;
+    
+}
+#courseDescription>div>img{
+    width: 100%;
+    height:200px;
+    border-radius: 5px 5px 0px 0px;
+}
+#courseDescription>div>button{
+    background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    border: 1px solid #ccc;
+    border-radius:3px;
+    color: #fff;
+    font-size:20px;
+}
+
+#parentDivOfLectures{
+    display:flex;
+    margin: auto;
+    width:83%;
+    margin-top: 20px;
+    padding:20px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    justify-content: space-between;
+}
+#parentDivOfLectures>#allLectures{
+    /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+    width:30%;
+}
+#allLectures>div{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    display:flex;
+    margin-top: 1px;
+    justify-content: space-between;
+}
+#allLectures>div>img{
+    width:30%;
+    border:1px solid black;
+    border-radius: 5px;
+}
+#allLectures>div>h3,p{
+    margin-top:20px;
+    
+}
+#allLectures>div>button{margin-top: 20px;
+    height:30px;
+    background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border:none;
+    border-radius: 5px;
+}
+#parentDivOfLectures>#lecturesToPlay{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    width:68%;
+}
+#parentDivOfLectures>#lecturesToPlay>div{
+    width:60%;
+    margin: auto;
+}

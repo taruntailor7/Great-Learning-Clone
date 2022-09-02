@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+}
+#navbar{
+    width: 100%;
+    /* border: 1px solid black; */
+    display:flex;
+    /* padding:10px 0px 10px 0px; */
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+#navbar>div:first-child{
+    width: 8%;
+    padding:15px 0px 10px 15px;
+    /* border: 1px solid red; */
+}
+#navbar>div:first-child>a>img{
+    width: 100%;
+}
+#navbar>div:nth-child(2){
+    display:flex;
+    width: 70%;
+    padding: 15px;
+    font-size: 23px;
+    justify-content:space-evenly;
+    /* border: 1px solid blue; */
+}
+#navbar>div>a{
+    text-decoration: none;
+    color: black;
+}
+#navbar>div:last-child{
+    display:flex;
+    width: 22%;
+    padding: 15px;
+    font-size: 23px;
+    justify-content:space-evenly;
+    /* border: 1px solid green; */
+}
+
+
+/* Add Course Section*/
+
+#addCour,#showCour{
+    width:83%;
+    margin: auto;
+    margin-top: 20px;
+}
+#addCourse{
+    width: 83%;
+    margin: auto;
+    margin-top:20px;
+    background-color: #f8f8f8;
+    padding:20px;
+    border-radius:8px;
+}
+#addCourse>input,#addCourseBtn{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+#addCourseBtn{
+    color:#fff;
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}
+#displayCourses{
+    width:83%;
+    margin: auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap: 20px;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    padding:20px;
+    border-radius:8px;
+}
+#displayCourses>div{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius:5px;
+    padding-bottom: 10px;
+}
+#displayCourses>div>img{
+    width: 100%;
+    height:200px;
+    border-radius: 5px 5px 0px 0px;
+}
+#displayCourses>div>button{
+    border: 1px solid #ccc;
+    border-radius:4px;
+    font-size: 15px;
+    padding:6px;
+}
+#addToWishlist{
+    color: #fff;
+    background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+#remCourse{
+    background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
