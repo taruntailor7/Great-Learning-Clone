@@ -8,7 +8,7 @@ const register = async () => {
         role : document.getElementById("roles").value
     }
 
-    let res = await fetch("https://great-learning-masai.herokuapp.com/users",{
+    let res = await fetch("https://great-learning.onrender.com/users",{
         method : 'POST',
         body : JSON.stringify(user_data),
         headers : {

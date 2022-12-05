@@ -1,7 +1,7 @@
 let usersId = localStorage.getItem("loggedInUserId");
 const displayCourses = async ()=>{
     // document.getElementById("displayCourses").innerHTML = ""
-    let coursesRes = await fetch(`https://great-learning-masai.herokuapp.com/users/${usersId}/wishlist`);
+    let coursesRes = await fetch(`https://great-learning.onrender.com/users/${usersId}/wishlist`);
     let courses = await coursesRes.json();
     console.log(courses);
     courses.map((element,index)=>{
@@ -39,7 +39,7 @@ const removed = async (element,index)=>{
     // console.log(index);
     let id = element.id; // element is
     // console.log(id);
-    let removeCourseRes = await fetch(`https://great-learning-masai.herokuapp.com/wishlist/${id}`,{
+    let removeCourseRes = await fetch(`https://great-learning.onrender.com/wishlist/${id}`,{
         method : "DELETE",
     });
     alert("Course removed")

@@ -1,5 +1,5 @@
 const logout = async()=>{
-    let res = await fetch("https://great-learning-masai.herokuapp.com/loggedInUser");
+    let res = await fetch("https://great-learning.onrender.com/loggedInUser");
     let data = await res.json();
     // data.filter((element)=>{
 
@@ -7,7 +7,7 @@ const logout = async()=>{
     // Remember ==> i have to map and find the user by using email then get id and then delete that particular user
     let id = localStorage.getItem("loggedInUserId");
 
-    let deleteRes = await fetch(`https://great-learning-masai.herokuapp.com/loggedInUser/${id}`,{
+    let deleteRes = await fetch(`https://great-learning.onrender.com/loggedInUser/${id}`,{
         method: "DELETE",
     });
     window.location.href = "./index.html";
@@ -24,7 +24,7 @@ const displayUser = async ()=>{
 
     if(userId>0){
         document.getElementById("buttons").innerHTML = "";
-        let user = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}`);
+        let user = await fetch(`https://great-learning.onrender.com/users/${userId}`);
         let userData = await user.json();
         let name = "Hello, " +userData.name;
         
@@ -39,7 +39,7 @@ displayUser();
 
 const displayCourse = async ()=>{
     // document.getElementById("displayCourses").innerHTML = ""
-    let coursesRes = await fetch("https://great-learning-masai.herokuapp.com/courses");
+    let coursesRes = await fetch("https://great-learning.onrender.com/courses");
     let courses = await coursesRes.json();
     // console.log(courses);
     courses.map(async (element,index)=>{

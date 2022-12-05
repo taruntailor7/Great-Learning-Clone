@@ -6,7 +6,7 @@ const addCourses = async ()=>{
         desc : document.getElementById("courseDesc").value, 
     }
 
-    let res = await fetch("https://great-learning-masai.herokuapp.com/courses",{
+    let res = await fetch("https://great-learning.onrender.com/courses",{
         method : "POST",
         body : JSON.stringify(courseObj),
         headers : {
@@ -22,7 +22,7 @@ let userId = localStorage.getItem("loggedInUserId");
 
 const displayCourses = async ()=>{
     // document.getElementById("displayCourses").innerHTML = ""
-    let coursesRes = await fetch("https://great-learning-masai.herokuapp.com/courses");
+    let coursesRes = await fetch("https://great-learning.onrender.com/courses");
     let courses = await coursesRes.json();
     // console.log(courses);
     courses.map(async (element,index)=>{
@@ -51,7 +51,7 @@ const displayCourses = async ()=>{
             addToWishlist(element);
         })
 
-        let userRes = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}`);
+        let userRes = await fetch(`https://great-learning.onrender.com/users/${userId}`);
         let userData = await userRes.json();
         let userRole = userData.role;
 
@@ -80,7 +80,7 @@ const removed = async (element,index)=>{
     // console.log(index);
     let id = element.id; // element is
     // console.log(id);
-    let removeCourseRes = await fetch(`https://great-learning-masai.herokuapp.com/courses/${id}`,{
+    let removeCourseRes = await fetch(`https://great-learning.onrender.com/courses/${id}`,{
         method : "DELETE",
     });
     alert("Course removed")
@@ -95,7 +95,7 @@ const addToWishlist = async (element)=>{
             price: element.price,
             desc: element.desc,
     };
-    let addToWishlist = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/wishlist`,{
+    let addToWishlist = await fetch(`https://great-learning.onrender.com/users/${userId}/wishlist`,{
         method : "POST",
         body : JSON.stringify(wishlistObj),
         headers : {

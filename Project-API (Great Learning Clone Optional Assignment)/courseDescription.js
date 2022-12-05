@@ -3,7 +3,7 @@ let userId = localStorage.getItem("loggedInUserId");
 // console.log(courseId);
 
 const displayCoursesDescription = async () => {
-  let res = await fetch(`https://great-learning-masai.herokuapp.com/courses/${courseId}`);
+  let res = await fetch(`https://great-learning.onrender.com/courses/${courseId}`);
   let data = await res.json();
   // console.log(data);
 
@@ -33,11 +33,11 @@ const displayCoursesDescription = async () => {
   //         // enroll();
   // });
 
-    var userRes = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}`);
+    var userRes = await fetch(`https://great-learning.onrender.com/users/${userId}`);
     var userData = await userRes.json();
     var userRole = userData.role;
 
-    let fetchingRes = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/purchasedCourses`);
+    let fetchingRes = await fetch(`https://great-learning.onrender.com/users/${userId}/purchasedCourses`);
     let fetched = await fetchingRes.json();
 
     var flag = false;
@@ -78,7 +78,7 @@ const addIntoCart = async (element) => {
     price: element.price,
     desc: element.desc,
   };
-  let addToCart = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/cart`, {
+  let addToCart = await fetch(`https://great-learning.onrender.com/users/${userId}/cart`, {
     method: "POST",
     body: JSON.stringify(addtoCartObj),
     headers: {
@@ -97,7 +97,7 @@ const createLecture = async () => {
     lectureLink: document.getElementById("lectureLink").value,
   };
   let lectureRes = await fetch(
-    `https://great-learning-masai.herokuapp.com/courses/${courseId}/lectures`,
+    `https://great-learning.onrender.com/courses/${courseId}/lectures`,
     {
       method: "POST",
       body: JSON.stringify(lectureObj),
@@ -112,14 +112,14 @@ const createLecture = async () => {
 
 document.getElementById("createLectureBtn").addEventListener("click", createLecture);
 
-var userRes = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}`);
+var userRes = await fetch(`https://great-learning.onrender.com/users/${userId}`);
 var userData = await userRes.json();
 var userRole = userData.role;
 
 
 const displayAllLectures = async () => {
   let allLecturesRes = await fetch(
-    `https://great-learning-masai.herokuapp.com/courses/${courseId}/lectures`
+    `https://great-learning.onrender.com/courses/${courseId}/lectures`
   );
   let lectureData = await allLecturesRes.json();
   // console.log(lectureData);
@@ -162,12 +162,12 @@ displayAllLectures();
 
 const playVideo = async (link, element, index) => {
   console.log(element.courseId, "courseId");
-  let res = await fetch(`https://great-learning-masai.herokuapp.com/courses/${element.courseId}`);
+  let res = await fetch(`https://great-learning.onrender.com/courses/${element.courseId}`);
   let accessible = await res.json();
   console.log(accessible.name,"accessible");
   console.log(courseId,"couid");
 
-  let fetchingRes = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/purchasedCourses`);
+  let fetchingRes = await fetch(`https://great-learning.onrender.com/users/${userId}/purchasedCourses`);
   let fetched = await fetchingRes.json();
   // console.log(fetched[0].name);
 
@@ -202,7 +202,7 @@ const removed = async (element)=>{
   // console.log(index);
   let id = element.id; // element is
   // console.log(id);
-  let removeCourseRes = await fetch(`https://great-learning-masai.herokuapp.com/lectures/${id}`,{
+  let removeCourseRes = await fetch(`https://great-learning.onrender.com/lectures/${id}`,{
       method : "DELETE",
   });
   alert("Lecture removed");

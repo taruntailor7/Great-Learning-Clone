@@ -2,7 +2,7 @@ let userId = localStorage.getItem("loggedInUserId");
 let cartTotal = 0;
 const displayCart = async ()=>{
     // document.getElementById("displayCourses").innerHTML = ""
-    let cartRes = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/cart`);
+    let cartRes = await fetch(`https://great-learning.onrender.com/users/${userId}/cart`);
     let cart = await cartRes.json();
     // console.log(cart);
     cart.map((element,index)=>{
@@ -45,7 +45,7 @@ displayCart();
 const removed = async (element)=>{
     // console.log(index);
     let id = element.id; // element is
-    let removeCourseRes = await fetch(`https://great-learning-masai.herokuapp.com/cart/${id}`,{
+    let removeCourseRes = await fetch(`https://great-learning.onrender.com/cart/${id}`,{
         method : "DELETE",
     });
     alert("Course removed")
@@ -55,7 +55,7 @@ const removed = async (element)=>{
 // let courseId = localStorage.getItem("courseId");
 
 const total = async ()=>{
-    let res = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/cart`);
+    let res = await fetch(`https://great-learning.onrender.com/users/${userId}/cart`);
     let purchasedCourses = await res.json();
     console.log(purchasedCourses,"len pur");
 
@@ -67,7 +67,7 @@ const total = async ()=>{
             name: element.name,
             image: element.imageUrl,
         }
-        let abc = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/purchasedCourses`,{
+        let abc = await fetch(`https://great-learning.onrender.com/users/${userId}/purchasedCourses`,{
             method: "POST",
             body: JSON.stringify(purchasedCourseName),
             headers: {
@@ -77,7 +77,7 @@ const total = async ()=>{
         // var a =  abc.json();
         // console.log(a);
         // console.log(element.id);
-        let emptyCart = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/cart`,{
+        let emptyCart = await fetch(`https://great-learning.onrender.com/users/${userId}/cart`,{
             method: 'PUT',
         });
     });

@@ -2,14 +2,14 @@ const login = async()=>{
     email = document.getElementById("email").value;
     password = document.getElementById("password").value;
 
-    let res = await fetch("https://great-learning-masai.herokuapp.com/users");
+    let res = await fetch("https://great-learning.onrender.com/users");
     let data = await res.json();
 
 
     let flag = false;
     for(let i=0; i<data.length; i++){
         if(data[i].email === email && data[i].password === password){
-            let res = await fetch("https://great-learning-masai.herokuapp.com/loggedInUser",{
+            let res = await fetch("https://great-learning.onrender.com/loggedInUser",{
                 method : 'POST',
                 body : JSON.stringify(data[i]),
                 headers : {

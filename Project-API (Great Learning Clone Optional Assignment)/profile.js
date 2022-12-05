@@ -1,7 +1,7 @@
 userId = localStorage.getItem("loggedInUserId");
 
 const userDetails = async ()=>{
-    let res = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}`);
+    let res = await fetch(`https://great-learning.onrender.com/users/${userId}`);
     let user = await res.json();
     // console.log(user);
 
@@ -22,7 +22,7 @@ const userDetails = async ()=>{
 userDetails();
 
 const displayPurchasedCourse = async ()=>{
-    let res = await fetch(`https://great-learning-masai.herokuapp.com/users/${userId}/purchasedCourses`);
+    let res = await fetch(`https://great-learning.onrender.com/users/${userId}/purchasedCourses`);
     let course = await res.json();
     // console.log(course);
     course.map((element)=>{
